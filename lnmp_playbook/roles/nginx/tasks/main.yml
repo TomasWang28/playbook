@@ -1,7 +1,7 @@
 - name: install nginx
   yum: name={{ item }} state=present
-  with_item:
-  - epel-relese
+  with_items:
+#  - epel-relese
   - nginx
 
 - name: copy nginx configure
