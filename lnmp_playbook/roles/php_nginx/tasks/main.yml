@@ -11,9 +11,11 @@
 - name: start php-fpm service
   service: name=php-fpm state=started enabled=yes
 
+- name: copy index.php
+  copy: src=index.php dest=/usr/share/nginx/html/index.php
+
 - name: copy php configure
   template: src=php.ini.j2 dest=/etc/php.ini
-  template: src=index.php.j2 dest=/usr/share/nginx/html/index.php
   notify: restart nginx
 
 
