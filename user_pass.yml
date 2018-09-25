@@ -1,7 +1,0 @@
----
-  - hosts: single
-    user: root
-    vars:
-         password: haHAfV7dvUhpM
-    tasks:
-         - user: name=alice password=`password` update_password=always
