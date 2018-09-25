@@ -1,0 +1,7 @@
+[mysqld]
+datadir= {{ data_dir }}
+socket= {{ socket_file }}
+symbolic-links=0
+[mysqld_safe]
+log-error=/var/log/mariadb/mariadb.log
+pid-file=/var/run/mariadb/mariadb.pid

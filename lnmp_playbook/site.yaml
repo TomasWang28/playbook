@@ -1,0 +1,6 @@
+---
+- hosts:kvm1
+  roles:
+  - nginx
+  - mariadb
+  - php_nginx

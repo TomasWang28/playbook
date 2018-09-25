@@ -1,0 +1,2 @@
+data_dir: /var/lib/mysql
+socket_file: /var/lib/mysql/mysql.sock
