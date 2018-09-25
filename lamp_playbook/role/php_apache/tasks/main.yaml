@@ -1,0 +1,20 @@
+---
+- name: install php
+  yum: name={{ item }} state=present
+  with_items:
+  - php-mysql
+  - php
+  - php-gd
+  - gd
+  - php-fpm
+
+- name: copy php.ini configure
+  template: src=php.ini.j2  dest=/etc/php.ini
+  notify: restart httpd
+
+- name: copy www.conf cconfigure
+  template: src=www.conf.j2 dest=/etc/php-fpm.d/www.conf
+
+- name: php test page
+  copy: src=index.php dest=/var/www/html/index.php
+
